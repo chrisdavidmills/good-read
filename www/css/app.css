@@ -1,0 +1,172 @@
+
+/* Tip: Use "@import" to add styles instead of adding <link>'s in your
+   HTML, and volo will inline it when building for production */
+
+/* Styles for the installation button */
+@import "install-button.css";
+
+/* Your styles here */
+
+/* || general styling */
+
+body, html {
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main {
+ padding: 1.5em;
+}
+
+h1 {
+  font-weight: 800;
+  text-align: center;
+  font-size: 3em;
+  line-height: 3;
+  margin: 0;
+  background: #9F3ED5;
+  color: white;
+}
+
+p {
+  font-size: 1.3em;
+  line-height: 1.6;
+}
+
+/* || navigation menu styling */
+
+nav ul {
+  list-style-type: none;
+  padding: 1em 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+nav li a {
+  border-bottom: 1px solid #AD66D5;
+  color: #9F3ED5;
+  
+  display: block;
+  font-size: 2em;
+  line-height: 2;
+  text-align: center;  
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: #BF7EF5
+}
+
+nav li:last-child a {
+  border-bottom: none;
+}
+
+/* || CSS table styling to get menu at bottom of layout */
+
+article {
+  display: table;
+}
+
+nav {
+  display: table-caption;
+  caption-side: bottom;
+}
+
+/* links to navigation menu, and then back up to the top again */
+
+header, .main {
+  position: relative;
+}
+
+#bottom, #top {
+  font-size: 0.8em;
+  position:absolute;
+  right: 1em;
+  text-decoration: none;  
+}
+
+#bottom:hover, #top:hover {
+  text-decoration: underline;
+}
+
+#top {
+  color: white;
+  top: 0.5em;
+}
+
+#bottom {
+  bottom: 0.5em;
+}
+
+/* || media queries */
+
+@media (min-width: 480px) {
+  #bottom, #top {
+    display: none;
+  }
+  
+  article, nav {
+    display: block;
+  }
+  
+  nav ul {
+    text-align: center;
+  }
+  
+  nav li {
+    display: inline;
+  }
+  
+  nav li a {
+    border-right: 1px solid #AD66D5;
+    border-bottom: none;
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 1.6em;
+  }
+
+  nav li:last-child a {
+    border-right: none;
+  }
+
+}
+
+@media (min-width: 600px) {
+  html {
+    background: #eee;
+    height: 100%;
+  }
+  
+  body {
+    width: 600px;
+    height: inherit;
+    margin: 0 auto;
+    background: url(../img/firefox-os.png) bottom left no-repeat, -webkit-linear-gradient(top, #fff, #eee);
+    background: url(../img/firefox-os.png) bottom left no-repeat, -moz-linear-gradient(top, #fff, #eee);
+    background: url(../img/firefox-os.png) bottom left no-repeat, -ms-linear-gradient(top, #fff, #eee);
+    background: url(../img/firefox-os.png) bottom left no-repeat, linear-gradient(to bottom, #fff, #eee);
+  }
+  
+  .main > p {
+    background: rgba(255,255,255,0.3);
+  }
+
+  nav li a {
+    padding: 0 10px;
+    font-size: 2em;
+  }
+}
+
+/* || modernizr fallbacks */
+
+.no-multiplebgs body {
+  background: white;
+}
+
+.no-rgba .main > p {
+  background: white;
+}
